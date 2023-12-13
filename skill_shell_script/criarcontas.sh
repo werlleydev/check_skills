@@ -2,7 +2,7 @@
 
 set -eou pipefail
 
-for username in $(tr ":" "\n" < novosusuarios)
+for username in $(tr ":" "\n" < /tmp/suporte/novosusuarios)
 do
   sre_username="sre_$username" 
   echo "Create user $sre_username"

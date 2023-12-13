@@ -33,7 +33,7 @@ ou usando o alvo deploy-prod:
 make deploy-prod
 ```
 
-## Configurando e iniando o servicos:
+## Configurando e iniando os servicos:
 
 ```bash
 make setup

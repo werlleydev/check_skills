@@ -1,0 +1,3 @@
+skill_ansible_docker/data/
+skill_ansible_docker/hello_world/data/
+*.pyc

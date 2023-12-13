@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  web:
+    image: python:3.8
+    command: bash -c "cd /app && pip install -r requirements.txt && python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - ./:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - DJANGO_DB_HOST=db
+      - DJANGO_DB_PORT=5432
+      - DJANGO_DB_NAME=magalu
+      - DJANGO_DB_USER=magalu_user
+      - DJANGO_DB_PASSWORD=magalu_pass
+
+  # PostgreSQL Database
+  db:
+    image: postgres:latest
+    volumes:
+      - /opt/postgres/data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=magalu
+      - POSTGRES_USER=magalu_user
+      - POSTGRES_PASSWORD=magalu_pass
+
+volumes:
+  postgres_data:

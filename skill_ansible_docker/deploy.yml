@@ -1,0 +1,15 @@
+---
+- hosts: all
+  become: yes
+  gather_facts: false
+  tasks:
+    - name: Copy project
+      copy:
+        src: ./hello_world/
+        dest: /opt/helloworld/app
+
+    - name: Start services
+      command: chdir=/opt/helloworld/app docker compose up -d
+
+
+

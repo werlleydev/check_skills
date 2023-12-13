@@ -18,7 +18,7 @@ bash criarcontas.sh
 
 Resultará na criação dos respectivos usuários: sre_foo e sre_bar
 
-# Filtra de usuários SRE
+# Filtra os usuários SRE
 Ao executar o script `usuarios_sre.sh`, ira listar todos os usuarios com prefico `sre_`
 
 ``` bash

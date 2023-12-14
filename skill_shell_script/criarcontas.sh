@@ -10,4 +10,6 @@ do
   echo "$sre_username  ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 done
 
-
+# one line way: 
+# $ awk 'BEGIN { RS = ":" }{ print "sre_" $0 }' /tmp/suporte/novosusuarios | xargs -I {} sudo useradd -s /bin/bash -m -G users,sudo -U {}`
+#
